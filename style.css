@@ -1,0 +1,173 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+/* 字体 */
+@font-face {
+  font-family: 'Baloo 2';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/baloo2/v2/wXKuE3kTposypRyd7-P5FeMKmA.woff2) format('woff2');
+}
+@font-face {
+  font-family: 'FZFWZZAY';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(https://cdn.jsdelivr.net/gh/zigou23/font/FZFWZhuZiAYuanJR.woff2) format('woff2');
+}
+
+/* https://cdn.jsdelivr.net/gh/zigou23/font/FZFWZhuZiAYuanJR.woff2 */
+
+body {
+	/*background: #f7f7f7;*/
+  /*background-image: linear-gradient(to left, rgba(255, 0, 149, 0.2), rgba(0, 247, 255, 0.2));*/
+	transition: background-color .8s, color .8s;
+  
+}
+a {
+    /*a链接下划线：none*/
+    text-decoration: none;
+}
+div p a{
+  color: #5DADE2;
+}
+p {
+   	line-height: 1.9em;
+   	font-weight: 400;
+}
+
+.p-break {
+	border-top: 4px solid #797979;
+   	max-width: 5em;
+   	width: 5em;
+   	height: 4px;
+}
+.main {
+    margin: 60px auto 0px auto;
+    width: 900px;
+   	background: rgb(255 255 255 / 3%);
+    border-radius: 10px;
+   	box-shadow: 0 0 15px 0 rgb(138 138 138 / 15%);
+}
+.header {
+	position: relative;
+   	height: 100px;
+   	top: 10px;
+   	padding: 50px;
+}
+.image-left {
+	position: absolute;
+	width: 100px;
+	height: 100px;
+	background: url(https://i1.wp.com/avatars.githubusercontent.com/u/40587032?v=4);
+	background-size: 100px 100px;
+  border-radius: 10%;
+	box-shadow: 0px 0px 10px #9c9c9c;
+  opacity: 0.75
+}
+.contact-right {
+	position: absolute;
+   	right: 60px;
+   	top: 50px;
+}
+.about {
+	padding: 0px 50px 0px 50px;
+	position: relative;
+	bottom: 20px;
+}
+.about h2 {
+	margin: 15px 0px 15px 0px;
+}
+/* footer鼠标悬停高亮 */
+footer {
+  color: #BFC9CA;
+  /* 悬停过滤动画 */
+  /*-moz-transition: opacity 0.5s ease-in-out;
+	-webkit-transition: opacity 0.5s ease-in-out;*/
+	/*-ms-transition: opacity 0.5s ease-in-out;*/
+	transition: opacity 0.5s ease-in-out;
+	/* color: rgba(255, 255, 255, 0.5); */
+	opacity: 0.45;
+  font-size: 12px;
+}
+/* 悬停不透明度为1 */
+footer:hover{
+    opacity: 1;
+}
+footer a {
+    color: #BFC9CA;
+    margin: 0px 0px;
+}
+footer a:hover {
+    color: #27AE60;
+}
+.footer-nav {
+    text-align: center;
+    height: 55px;
+    margin: 0 auto;
+}
+.icp {
+    margin-top: 20px;
+    
+}
+@media screen and (max-width: 900px) {
+   	.main {
+   	    width: 93%!important;
+   	    margin-top: 20px;
+   	}
+   	.header {
+   		padding: 20px!important;
+   	}
+   	.contact-right {
+   		right: 20px!important;
+   	}
+   	.about {
+   		padding: 20px!important;
+   	}
+}
+@media (prefers-color-scheme:dark) {
+    body {
+        background-color: #111;
+        color: #999;
+    }
+    .main {
+    	background-color: #171717;
+    }
+}
+::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+    border-radius: 20px;
+}
+/* 滚动条 */
+::-webkit-scrollbar-thumb {
+    background-image: linear-gradient(-225deg,#feb7ffba 0,#73fff1a6 100%)!important;
+}
+::-webkit-scrollbar-thumb:hover {
+    background-image: linear-gradient(-225deg,#fb00ffba 0,#00ffe5a6 100%)!important;
+}
+.darkmode {
+    color: #999!important;
+    background-color: #1A1714!important;
+}
+
+/*darkmode按钮*/
+.night {
+	position: absolute;
+	bottom: auto;
+	right: 40px;
+	width: 32px;
+	height: 32px;
+	background: url(https://cdn.jsdelivr.net/gh/zigou23/blog/img/dark_mode.svg) no-repeat center;
+  /*边框*/
+	border: 1px solid rgb(101 101 101 / 50%);
+	border-radius: 35%;
+	padding: 3px;
+}
+
+/*脚注 本站已存活*/
+#momk{
+  font-weight: 800;
+}

@@ -1,0 +1,69 @@
+
+
+/* Basic */
+
+	@-ms-viewport {
+		width: device-width;
+	}
+
+	body {
+		-ms-overflow-style: scrollbar;
+	}
+
+
+
+
+
+
+	body {
+		display: -moz-flex;
+		display: -webkit-flex;
+		display: -ms-flex;
+		display: flex;
+		-moz-flex-direction: column;
+		-webkit-flex-direction: column;
+		-ms-flex-direction: column;
+		flex-direction: column;
+		background-color: #000;
+	}
+
+	
+	
+
+	
+
+	body, input, select, textarea {
+		color: rgba(255, 255, 255, 0.75);
+		/* font-family: "Roboto", sans-serif; */
+		/* font-size: 16pt; */
+		/* font-weight: 400; */
+		/* letter-spacing: -0.01em; */
+		/* line-height: 1.65em; */
+	}
+
+	
+		
+
+
+	#footer {
+		-moz-transition: opacity 0.5s ease-in-out;
+		-webkit-transition: opacity 0.5s ease-in-out;
+		-ms-transition: opacity 0.5s ease-in-out;
+		transition: opacity 0.5s ease-in-out;
+		bottom: 4em;
+		/* color: rgba(255, 255, 255, 0.5); */
+		opacity: 0.5;
+	}
+
+		
+			
+
+				
+
+			
+
+		#footer:hover {
+			opacity: 1;
+		}
+
+

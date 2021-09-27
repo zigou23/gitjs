@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="Zh-CN">
+ <head> 
+  <meta charset="UTF-8" /> 
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" /> 
+  <title>Chat</title>
+  <link rel="shortcut icon" href="favicon.png" /> 
+  <link rel="stylesheet" href="chat/living.css" /> 
+  <script src="https://cdn.jsdelivr.net/npm/@waline/client"></script>
+  <!--<script>
+        var _hmt = _hmt || [];
+        (function() {
+          var hm = document.createElement("script");
+          hm.src = "https://hm.baidu.com/hm.js?12d2ac57976e3669135c725b2854f6e4";
+          var s = document.getElementsByTagName("script")[0]; 
+          s.parentNode.insertBefore(hm, s);
+        })();
+  </script>-->
+ <style>
+   /*waline*/
+   :root{
+     /*提交按钮*/
+     --waline-theme-color: #3AA1CC;
+     /*背景颜色*/
+     --waline-bgcolor: rgb(255 255 255 / 35%);
+     --waline-bgcolor-light: #f8f8f8;
+     --waline-bgcolor-hover: #f0f0f0;
+   }
+ </style>
+ <script>
+  var bodyBgs = [];
+  bodyBgs[0] = "linear-gradient(to left bottom, hsl(158, 100%, 85%) 0%,hsl(65, 100%, 85%) 100%)";
+  bodyBgs[1] = "linear-gradient(to left bottom, hsl(170, 100%, 85%) 0%,hsl(23, 100%, 85%) 100%)";
+  bodyBgs[2] = "linear-gradient(to left bottom, hsl(251, 100%, 85%) 0%,hsl(118, 100%, 85%) 100%)";
+  bodyBgs[3] = "linear-gradient(to left bottom, hsl(5, 100%, 85%) 0%,hsl(135, 100%, 85%) 100%)";
+  bodyBgs[4] = "linear-gradient(to left bottom, hsl(254, 100%, 85%) 0%,hsl(65, 100%, 85%) 100%)";
+  bodyBgs[5] = "linear-gradient(to left bottom, hsl(198, 100%, 85%) 0%,hsl(154, 100%, 85%) 100%)";
+  bodyBgs[6] = "linear-gradient(to left bottom, hsl(152, 100%, 85%) 0%,hsl(219, 100%, 85%) 100%)";
+  bodyBgs[7] = "#BFF";
+  bodyBgs[8] = "#FFF";
+  var randomBgIndex = Math.round( Math.random() * 6 );
+  //输出随机的背景图<style>body{background:url(' + bodyBgs[randomBgIndex] + ')top center no-repeat; background-size:cover;}</style>
+  document.write('<style>body{background: ' + bodyBgs[randomBgIndex] + '; }</style>');
+ </script>
+ </head> 
+ <body> 
+  <div class="main"> 
+   <div class="living"> 
+    <img src="https://i1.wp.com/avatars.githubusercontent.com/u/40587032?v=4" alt="living" /> 
+    <p id="livingjSitetime" class="livingtime"></p> 
+   </div> 
+  </div> 
+  <div id="waline"></div>
+  <footer class="footer-nav"> 
+   <!--<a>富强</a> 
+   <a>民主</a> 
+   <a>文明</a> 
+   <a>和谐</a> 
+   <a>自由</a> 
+   <a>平等</a> 
+   <a>公正</a> 
+   <a>法制</a> 
+   <a>爱国</a> 
+   <a>敬业</a> 
+   <a>诚实</a> 
+   <a>友善</a> 
+<div class="icp">
+        <a target="_blank" href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=41168102000061">
+          <img src="icp.png" data-ll-status="loading">豫公网安备41168102000061号</a>
+        <a href="http://beian.miit.gov.cn" target="_blank">豫ICP备20017009号-1</a></div>
+   <div class="guoqi"></div>
+   <div id="goTop" class="back-to-top" title="返回顶部"></div>-->
+  </footer>
+  <script src="living.js"></script>
+  <script>
+    //返回顶部
+    const goTopBtn = document.getElementById('goTop')
+    let scrollTop = 0
+    window.onscroll = () => {
+      scrollTop = document.documentElement.scrollTop || document.body.scrollTop;
+      scrollTop > 50 ? (goTopBtn.style.display = 'block') : (goTopBtn.style.display = 'none')
+    }
+    goTopBtn.onclick = () => {
+      let timer = null;
+      clearInterval(timer);
+      timer = setInterval(()=>{
+        scrollTop -= scrollTop / 10;
+        window.scrollTo(0,scrollTop)
+        if(scrollTop<2){
+          window.scrollTo(0,0);
+          clearInterval(timer);
+        }
+      },15)
+    }
+  </script>
+  <script>
+    Waline({
+    el: '#waline',
+    serverURL: 'https://comment-tau.vercel.app/',
+    dark: 'auto',
+    //lang:'en',
+    //必须元素
+    requiredMeta: [
+    'nick', 'mail','placeholder'
+    ],
+    placeholder: '吐槽以下吧，不然我很孤单的',
+    login: 'disable',
+    //login: '', login参数:force强制,disable禁用
+    //forbiddenWords: ['违禁词', '填写'],
+    
+    //emoji
+    emoji: [
+      'https://cdn.jsdelivr.net/gh/walinejs/emojis/weibo',
+      'https://cdn.jsdelivr.net/gh/walinejs/emojis@1.0.0/alus',
+      'https://cdn.jsdelivr.net/gh/walinejs/emojis@1.0.0/bilibili',
+      'https://cdn.jsdelivr.net/gh/walinejs/emojis@1.0.0/tw-emoji',
+      'https://cdn.jsdelivr.net/gh/walinejs/emojis@1.0.0/qq',
+    ],
+    });
+  </script>
+  </body>
+</html>
